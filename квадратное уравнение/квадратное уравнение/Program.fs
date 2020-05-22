@@ -13,6 +13,7 @@ let textBox1 = new TextBox (Top = 60, Left = 40, Width = 70)
 let textBox2 = new TextBox (Top = 117, Left = 40, Width = 70) 
 let ThisButton = new Button(Top = 330 ,Left = 135, Width = 75, Height = 23, Text = "посчитать" )
 let richTextBox = new RichTextBox (Top = 32, Left = 180, Width = 150, Height = 200)
+
  
 
 
@@ -25,11 +26,14 @@ MainForm.Controls.Add(textBox3)
 MainForm.Controls.Add(ThisButton)
 MainForm.Controls.Add(richTextBox)
 
-let discrim _ = MessageBox.Show ( (int(System.Convert.ToInt32(Label2.Text)) * (System.Convert.ToInt32(Label2.Text)) - 4 * ( (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) ) ) ) |> ignore
-    if discrim > 0 
-    let x1 = (- (System.Convert.ToInt32 (Label2.Text))) + sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) )
-    let x2 
-let _= ThisButton.Click.Add(discrim) 
+
+let discrim = ( (int(System.Convert.ToInt32(Label2.Text) ) * (System.Convert.ToInt32(Label2.Text) ) ) - 4 * ( (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) ) ) ) 
+if discrim > 0 then
+                   let x1 _ = MessageBox.Show.( - ( Label2.Text) + sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) )|> ignore
+                   let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text))) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) )|> ignore
+    elif discrim = 0 then 
+                   let 
+let _= ThisButton.Click.Add(x1, x2)  
 
 
 

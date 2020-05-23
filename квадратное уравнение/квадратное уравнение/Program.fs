@@ -1,14 +1,14 @@
 ﻿open System
 open System.Windows.Forms
 open System.IO
-open System.Drawing
+open System.Drawing 
 
 
 let MainForm = new Form(Width = 379, Height = 470, Text = "квадратное уравнение Form" )
 let Label1 = new Label(Top = 32, Left = 40, Text = "a")
 let Label2 = new Label(Left = 40, Top = 90, Text = "b")
 let Label3 = new Label(Left = 40, Top = 148, Text = "с")
-let textBox3 = new TextBox (Top = 174, Left = 40, Width = 70) 
+let textBox3 = new TextBox (Top = 174, Left = 40, Width = 70)
 let textBox1 = new TextBox (Top = 60, Left = 40, Width = 70) 
 let textBox2 = new TextBox (Top = 117, Left = 40, Width = 70) 
 let ThisButton = new Button(Top = 330 ,Left = 135, Width = 75, Height = 23, Text = "посчитать" )
@@ -27,12 +27,14 @@ MainForm.Controls.Add(ThisButton)
 MainForm.Controls.Add(richTextBox)
 
 
-let discrim = ( (int(System.Convert.ToInt32(Label2.Text) ) * (System.Convert.ToInt32(Label2.Text) ) ) - 4 * ( (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) ) ) ) 
-if discrim > 0 then
-                   let x1 _ = MessageBox.Show.( - ( Label2.Text) + sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) )|> ignore
-                   let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text))) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) )|> ignore
-    elif discrim = 0 then 
-                   let 
+let discrim = ( (int(System.Convert.ToInt32(Label2.Text) ) * (System.Convert.ToInt32(Label2.Text) ) ) - (4 * (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) )) ) )
+
+if discrim > 0 then 
+                    let x1 _ = MessageBox.Show ( - ( (System.Convert.ToInt32(Label2.Text))) + sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
+                    let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text))) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
+elif discrim = 0 then 
+                 let x1 _ = MessageBox.Show (-( (System.Convert.ToInt32 (Label2.Text) / (2 * ( (System.Convert.ToInt32(Label1.Text) ) ) ) ) ) )
+
 let _= ThisButton.Click.Add(x1, x2)  
 
 

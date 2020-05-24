@@ -27,15 +27,17 @@ MainForm.Controls.Add(ThisButton)
 MainForm.Controls.Add(richTextBox)
 
 
-let discrim = ( (int(System.Convert.ToInt32(Label2.Text) ) * (System.Convert.ToInt32(Label2.Text) ) ) - (4 * (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) )) ) )
+let discrim =( ( ( (Convert.ToDouble(texBox1.Text) ) * (System.Convert.ToInt32(Label2.Text) ) ) - (4 * (System.Convert.ToInt32(Label1.Text) * (System.Convert.ToInt32 (Label3.Text) ) ) ) )
 
-if discrim > 0 then 
-                    let x1 _ = MessageBox.Show ( - ( (System.Convert.ToInt32(Label2.Text))) + sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
-                    let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text))) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
-elif discrim = 0 then 
-                 let x1 _ = MessageBox.Show (-( (System.Convert.ToInt32 (Label2.Text) / (2 * ( (System.Convert.ToInt32(Label1.Text) ) ) ) ) ) )
+//let x1 x2 =
+          if discrim > 0 then let x1 _ = MessageBox.Show ( - ( (System.Convert.ToInt32(TextBox.Text) ) ) + Mat.Sqrt(discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
+   //                            let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text) ) ) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
+//let discrim = 0 then  let x1 _ = MessageBox.Show (-((System.Convert.ToInt32 (Label2.Text) / (2 * ( (System.Convert.ToInt32(Label1.Text) ) ) ) ) ) ) |> ignore 
 
-let _= ThisButton.Click.Add(x1, x2)  
+//elif discrim < 0 then 
+  //               let x1 _ = MessageBox.Show(Text = "действительных корней не существует")
+
+let _= ThisButton.Click.Add (discrim)  
 
 
 

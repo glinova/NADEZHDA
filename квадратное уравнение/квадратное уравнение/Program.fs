@@ -27,12 +27,13 @@ MainForm.Controls.Add(ThisButton)
 MainForm.Controls.Add(richTextBox)
 
 
-let discrim = ( ( ( (Convert.ToDouble(texBox2.Text) ) * (Convert.ToDouble(texBox2.Text) ) ) - (4 * (Convert.ToDouble(texBox1.Text) * (Convert.ToDouble(texBox3.Text) ) ) ) )
+let discrim = ( Convert.ToDouble(texBox2.Text) * Convert.ToDouble(texBox2.Text) ) - ( 4 * Convert.ToDouble(texBox1.Text) * Convert.ToDouble(texBox3.Text) )
 
+let f (x1: double , x2: double) = 
+    if discrim > 0 
+    then let x1 _ = MessageBox.Show ( - ( ( ( (Convert.ToDouble(texBox2.Text ) ) + sqrt discrim ) / (2 * (Convert.ToDouble(texBox1.Text) ) ) ) )|> ignore
+         let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text) ) ) - sqrt discrim ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
 
-let x1 x2 =
-         if discrim > 0 then let x1 _ = MessageBox.Show ( - ( ( ( (Convert.ToDouble(texBox.Text) ) ) + sqrt discrim ) / (2 * (Convert.ToDouble(texBox1.Text) ) ) ) )|> ignore
-                         let x2 _ = MessageBox.Show (- ( (System.Convert.ToInt32 (Label2.Text) ) ) - sqrt (discrim) ) / (2 * (System.Convert.ToInt32(Label1.Text) ) )|> ignore
 //let discrim = 0 then  let x1 _ = MessageBox.Show (-((System.Convert.ToInt32 (Label2.Text) / (2 * ( (System.Convert.ToInt32(Label1.Text) ) ) ) ) ) ) |> ignore 
 
 //elif discrim < 0 then 

@@ -40,10 +40,12 @@ MainForm.Controls.Add(ThisButton)
 
 
 
-let pr _ = MessageBox.Show ( ("X1 = " + Convert.ToString( - ( ( ( (Convert.ToDouble(textBox2.Text ) ) - sqrt (Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text) - 4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text)) ) / (2.0 * (Convert.ToDouble(textBox1.Text) ) ) ) ) ) + "\nX2 = " + Convert.ToString( - ( ( ( (Convert.ToDouble(textBox2.Text ) ) + sqrt (Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text) - 4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text)) ) / (2.0 * (Convert.ToDouble(textBox1.Text) ) ) ) ) ) ) , "умножение") |>ignore 
-let _ = ThisButton.Click.Add(pr)
+let pr _ = 
+     if ( Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text)  -  4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text) ) > 0.0 then
+        MessageBox.Show( ("X1 = " + Convert.ToString( - ( ( ( (Convert.ToDouble(textBox2.Text ) ) - sqrt (Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text)  -  4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text)) ) / (2.0 * (Convert.ToDouble(textBox1.Text) ) ) ) ) ) + "\nX2 = " + Convert.ToString( - ( ( ( (Convert.ToDouble(textBox2.Text ) ) + sqrt (Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text)  -  4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text)) ) / (2.0 * (Convert.ToDouble(textBox1.Text) ) ) ) ) ) ) , "умножение") |>ignore
+ 
 
-//let pr1 _ = MessageBox.Show (Convert.ToString(Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text)  -  4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text)) < 0, "умножение") |>ignore
+
 
 
 

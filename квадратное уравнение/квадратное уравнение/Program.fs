@@ -28,15 +28,15 @@ MainForm.Controls.Add(ThisButton)
 
 //let discrim =  Convert.ToDouble(textBox2.Text) * Convert.ToDouble(textBox2.Text)  -  4.0 * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox3.Text) 
 
-let pr x y = x*y
-let proisved =
-    let a = Convert.ToDouble(textBox1.Text) 
-    let b = Convert.ToDouble(textBox2.Text)
-    (pr a b)
 
 
+let pr1  = 2*2
+let pr _ = MessageBox.Show (Convert.ToString(pr1),"умножение")|>ignore
 
-//let x1:double =
+let _ = ThisButton.Click.Add(pr)
+
+
+//let x1:double =     (Convert.ToDouble(textBox1.Text) * (Convert.ToDouble(textBox2.Text)
  //   if discrim > 0 then 
  //   let x1 _ = MessageBox.Show ( - ( ( ( (Convert.ToDouble(textBox2.Text ) ) + sqrt discrim ) / (2.0 * (Convert.ToDouble(textBox1.Text) ) ) ) ) |> ignore
 
@@ -52,8 +52,7 @@ let proisved =
 
     
 
-
 [<EntryPoint>]
-let main argv = 
+    let main argv = 
     Application.Run(MainForm)
     0

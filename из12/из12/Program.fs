@@ -10,7 +10,10 @@ let read_data=
     read_list n
 
     
-let rec ref
+let rec list =
+    match list with
+    | [] -> 0
+    | head::tail -> 
 
     
     

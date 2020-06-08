@@ -11,11 +11,18 @@ let read_data=
 
 
 let unic list el =
-    let rec 
+    let rec unic1 el = function 
+    [] -> false
+    |h::t  -> if el = h then unic1 n el t
 
+    //проверить след элемент из исходного, если он равен эл-ту из L1, то пропускаем
 
-
-let
+let wow_new_list list =
+    let rec wow_new_list1 L1 list = function
+    [] -> L1
+    | h::t -> let l = h::L1
+              if ()
+                
 
 
 let rec in_list_exclude list el = function
@@ -27,18 +34,18 @@ let rec in_list_exclude list el = function
 
 
     
-let rec count list el =
-    match list with 
-    | [] -> false
-    | head::tail -> if n then 
-                         if el=h then count (n+1) el t
-                         else count n el t
-count 0 el list
+//let rec count list el =
+//    match list with 
+//    | [] -> false
+//    | head::tail -> if n then 
+//                         if el=h then count (n+1) el t
+//                         else count n el t
+//count 0 el list
     
     
     
     
-let prog list =
-    match list with
-    | []-> 0
-    | head::tail -> prog2 prov head tail 
+//let prog list =
+//    match list with
+//    | []-> 0
+//    | head::tail -> prog2 prov head tail 

@@ -9,24 +9,36 @@ let read_data=
     let n = System.Convert.ToInt32(System.Console.ReadLine())
     read_list n
 
+let findcount list el =
+    let rec count list el =
+        match list with 
+    |   [] -> false
+    |   h::t -> if list element then 
+                            if elem=h then count (n+1) el t
+                            else count n el t
+count 0 elem count
 
-//let unic list el =
-//    let rec unic1 el = function 
-//    [] -> false
-//    |h::t  -> if el = h then unic1 n el t
 
 
 
 
-//let rec unic list el = function //unic заменить
-//    [] -> true
-//    |h::t -> if  h=el then false 
-//                else unic t el t
+
+
+
+let podshet list el =
+    let rec count n elem  = function
+    [] -> false
+    |h::t -> if 
+
+
+
+
 
 let rec uniq L1 list elem = function
     |[] -> L1
-    | h::t -> let l = h::L1 if (findReapeats list h)
-
+    | h::t -> let l = h::L1 if (findReapeats list h) then
+                            uniq l list h t
+                            else uniq L1 list elem t
 
 
 
@@ -55,17 +67,6 @@ let rec findReapeats list elem = function
 //    |h::t -> if h=el then false
 //                else in_list_exclude t el t
 
-
-
-
-    
-//let rec count list el =
-//    match list with 
-//    | [] -> false
-//    | head::tail -> if n then 
-//                         if el=h then count (n+1) el t
-//                         else count n el t
-//count 0 el list
     
     
     

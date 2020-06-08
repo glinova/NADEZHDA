@@ -18,40 +18,42 @@ let read_data=
 
 
 
-let rec unic list el = function
-    [] -> true
-    |h::t -> if  h=el then false 
-                else unic t el t
+//let rec unic list el = function //unic заменить
+//    [] -> true
+//    |h::t -> if  h=el then false 
+//                else unic t el t
+
+let rec uniq L1 list elem = function
+    |[] -> L1
+    | h::t -> let l = h::L1 if (findReapeats list h)
 
 
 
 
 
 
-
-let list =
-    let rec findReapeats list el =
-    match list with
+let rec findReapeats list elem = function
     |[] -> true
-    |h::t -> if 
+    |h::t -> if h = elem  then false
+             else findReapeats t elem t
 
 
 
 
     //проверить след элемент из исходного, если он равен эл-ту из L1, то пропускаем
 
-let new_list list =
-    let rec new_list L1 list = function
-    [] -> L1
-    | h::t -> let l = h::L1
-              if ()
+//let new_list list =
+//    let rec new_list L1 list = function
+//    [] -> L1
+//    | h::t -> let l = h::L1
+//              if ()
                 
 
 
-let rec in_list_exclude list el = function
-    [] ->true
-    |h::t -> if h=el then false
-                else in_list_exclude t el t
+//let rec in_list_exclude list el = function
+//    [] ->true
+//    |h::t -> if h=el then false
+//                else in_list_exclude t el t
 
 
 

@@ -9,33 +9,40 @@ let read_data=
     let n = System.Convert.ToInt32(System.Console.ReadLine())
     read_list n
 
-let findcount list elem =
-    let rec find list elem count = function
-    |[] -> count 
-    |h::t -> if elem = h then find (count+1) elem t
-                        else find elem t
- find 0 elem list
-        
 
+//let rec write_list (list:int list)=
+//    match list with 
+//    |[] ->  let z=System.Console.ReadKey()
+//            0
+//    |h::t -> System.Console.WriteLine(h.ToString())
+//             write_list t   
 
+//let findcount list elem =
+//    let rec find list elem count = function
+//    |[] -> count 
+//    |h::t -> if elem = h then find (count+1) elem t
+//                        else find elem t
+ 
 
-let podshet list el =
-    let rec count n elem  = function
-    [] -> false
-    |h::t -> if 
+//let List1 (input:list<int>) =
+//    let rec findReapeats list elem = function
+//        |[] -> true
+//        |h::t -> if h = elem  then false
+//                    else findReapeats t elem t
 
+//    let rec uniq L1 list elem = function
+//        |[] -> L1
+//        |h::t -> let l= h::L1 
+//                 if (findReapeats list h) then
+//                   uniq l list h t
+//                  else uniq L1 list elem t
 
-let rec findReapeats list elem = function
-    |[] -> true
-    |h::t -> if h = elem  then false
-             else findReapeats t elem t
-
-
-let rec uniq L1 list elem = function
-    |[] -> L1
-    | h::t -> let l = h::L1 if (findReapeats list h) then
-                                uniq l list h t
-                                else uniq L1 list elem t
+//let rec vivod L1 = 
+//    match L1 with
+//    |[] -> ()
+//    |h::t -> System.Console.Write(L1.ToString)
+//             vivod 
+//let L1 = uniq [] input
 
 
 
@@ -57,10 +64,39 @@ let rec uniq L1 list elem = function
 //                else in_list_exclude t el t
 
     
-    
-    
+ 
     
 //let prog list =
 //    match list with
 //    | []-> 0
 //    | head::tail -> prog2 prov head tail 
+
+
+
+let list1 (input:list<int>) =
+    let rec findRepeats list elem = function
+    |[] -> true
+    |h::t -> if h = elem then false
+                else findRepeats t elem t
+
+     
+    let rec uniq list1 input = function
+    |[] -> list1 
+    |h::t ->    let L1=h::list1
+                if (findRepeats list h) && (findRepeats list1 h list1) then
+                uniq L1 input h t
+                else uniq list1 input t
+     
+let rec output list1 = function
+|[] -> ()
+|h::t -> System.Console.Write(list1 h)
+        output list1 t
+
+let (list1:list<int>) = uniq [] input
+
+
+
+
+
+
+

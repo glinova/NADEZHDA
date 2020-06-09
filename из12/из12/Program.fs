@@ -11,31 +11,34 @@ let read_data=
 
 
 
-let rec findRepeats list elem = function
+let rec findRepeats list elem = 
+    match list with
     |[] -> true
     |h::t -> if h = elem then false
-                else findRepeats t elem t
+                else findRepeats t elem 
 
-let new_uniq list=   
-    let rec uniq list1 input = function
+let new_uniq (list:list<int>)=   
+    let rec uniq (list1:list<int>) (input:list<int>) = 
+    match input with
     |[] -> list1 
     |h::t ->    let L1=h::list1
-                if (findRepeats list h) && (findRepeats list1 h list1) then uniq L1 input t
+                if (findRepeats list h ) then //&& (findRepeats list1 h list1) then uniq L1 input t
                 else uniq list1 input t
     uniq [] list list 
 
-let rec output (list1:int list)=
-    match list1 with
+let rec output (list:int list)=
+    match list with
     |[] -> let z=System.Console.ReadKey()
-            0
-    |h::t -> System.Console.WriteLine ((findRepeats )
+           0
+    |h::t -> System.Console.WriteLine (h.ToString ())
+             write_list t
 
 
-let list2 (input:list<int>) list1 =
-    let rec findCount input elem count = function
-    |[] -> count 
-    |h::t -> if h=elem then findCount input t (count+1)
-             else findCount input t count
+let list2 (input:list<int>) list =
+    let rec chekAll list input list = 
+        match list with
+    |[] -> list 
+    |h::t -> 
 
 findCount 0 el
 

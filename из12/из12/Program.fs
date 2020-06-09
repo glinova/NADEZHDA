@@ -5,7 +5,7 @@
     let tail = read_list (n-1)
     head::tail
 
-let read_data=
+let read_data()=
     let n = System.Convert.ToInt32(System.Console.ReadLine())
     read_list n
 
@@ -19,29 +19,49 @@ let rec findRepeats list elem =
 
 let new_uniq (list:list<int>)=   
     let rec uniq (list1:list<int>) (input:list<int>) = 
-    match input with
-    |[] -> list1 
-    |h::t ->    let L1=h::list1
-                if (findRepeats list h ) then //&& (findRepeats list1 h list1) then uniq L1 input t
-                else uniq list1 input t
-    uniq [] list list 
+        match input with
+    |   [] -> list1 
+        |h::t ->    if (findRepeats list h ) then //&& (findRepeats list1 h list1) then uniq L1 input t
+                    System.Console.Write(h.ToString() + "  ")
+                    uniq (list1@[h])  t
+                    else uniq list1 t
+    uniq [] list
 
-let rec output (list:int list)=
+let list2 (input:list<int>) elem =
+    let rec findCount (input:list<int>) (elem:int) (count:int) = 
+        match input with
+        |[] -> count 
+        |h::t -> if (h=elem) then 
+                      findCount t elem (count+1)
+                 else 
+                      findCount t elem count
+    findCount input elem 0
+
+
+let rec output (list:int list) input=
     match list with
-    |[] -> let z=System.Console.ReadKey()
-           0
-    |h::t -> System.Console.WriteLine (h.ToString ())
-             write_list t
+    |[] -> ()
+    |h::t -> System.Console.Write((list2 input h).ToString() + "  ")
+             output t input
 
 
-let list2 (input:list<int>) list =
-    let rec chekAll list input list = 
-        match list with
-    |[] -> list 
-    |h::t -> 
+[<EntryPoint>]
+let main argv =
+    let temp = read_data()
+    let unique = new_uniq temp
+    System.Console.WriteLine ""
+    output unique temp
+    System.Console.ReadKey()
+    0
 
-findCount 0 el
 
+//let list2 (input:list<int>) list =
+//    let rec chekAll list input list = 
+//        match list with
+//    |[] -> list 
+//    |h::t -> 
+
+//findCount 0 el
 
 
 

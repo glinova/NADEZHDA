@@ -1,14 +1,16 @@
-﻿let chisl n =
+﻿let prost n =
     let rec poisk n r =
-        if (n=1) && (n%r=0) then false
+        if (n=1) then false
         else
         if (r=n/2+1) then true
+        else
+        if (n%r=0) then false 
         else poisk n (r+1)
     poisk n 2
 
 let rec razl chislo =
     let rec razlb chislo delitel pred now =
-        if (delitel>chislo && chislo != 1) then -1
+        if (delitel>chislo && chislo <> 1) then -1
             else
                 if(prost chislo) then
                     if (chislo = pred) then now
@@ -24,10 +26,6 @@ let rec razl chislo =
                             else 
                                 razlb chislo (delitel+1) delitel now
     razlb chislo 2 1 0
-
-
-
-
 
 
 
@@ -47,8 +45,10 @@ let main argv =
         System.Console.Write(chislo-now)
         System.Console.Write(" ")
         output chislo (now-1)
+    
     let count = System.Convert.ToInt32(System.Console.ReadLine());
     let result = perebor 2 count 0
+    
     output result count
     System.Console.WriteLine()
     0

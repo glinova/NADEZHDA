@@ -6,6 +6,30 @@
         else poisk n (r+1)
     poisk n 2
 
+let rec razl chislo =
+    let rec razlb chislo delitel pred now =
+        if (delitel>chislo && chislo != 1) then -1
+            else
+                if(prost chislo) then
+                    if (chislo = pred) then now
+                        else 
+                            now+1
+                else 
+                    if (chislo=1) then now
+                        else 
+                            if(prost delitel = true && chislo%delitel=0) then
+                                if (delitel=pred) then razlb (chislo/delitel) delitel pred (now)
+                                    else
+                                        razlb (chislo/delitel) delitel delitel (now+1)
+                            else 
+                                razlb chislo (delitel+1) delitel now
+    razlb chislo 2 1 0
+
+
+
+
+
+
 
 let rec perebor chislo vsegochis now =
     if (now = vsegochis) then chislo;

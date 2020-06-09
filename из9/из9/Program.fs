@@ -14,3 +14,17 @@ let rec perebor chislo vsegochis now =
             if (uniq = vsegochis) then perebor (chislo+ 1) vsegochis (now+1)
                 else 
                     perebor (chislo+1) vsegochis 0
+            
+[<EntryPoint>]
+let main argv =
+    let rec output chislo now=
+        if(now=0) then ()
+        else
+        System.Console.Write(chislo-now)
+        System.Console.Write(" ")
+        output chislo (now-1)
+    let count = System.Convert.ToInt32(System.Console.ReadLine());
+    let result = perebor 2 count 0
+    output result count
+    System.Console.WriteLine()
+    0

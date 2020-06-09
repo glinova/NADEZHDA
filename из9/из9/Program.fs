@@ -1,7 +1,10 @@
 ﻿let chisl n =
-    let rec r n k =
-if ((n=1) && (n % k=0))then false
-else
-if (k=n/2+1) then true
-else r n (k+1)
-    r n 2
+    let rec poisk n r =
+        if (n=1) && (n%r=0) then false
+        else
+        if (r=n/2+1) then true
+        else poisk n (r+1)
+    poisk n 2
+
+
+

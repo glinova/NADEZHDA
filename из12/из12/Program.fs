@@ -10,6 +10,38 @@ let read_data=
     read_list n
 
 
+
+let rec findRepeats list elem = function
+    |[] -> true
+    |h::t -> if h = elem then false
+                else findRepeats t elem t
+
+let new_uniq list=   
+    let rec uniq list1 input = function
+    |[] -> list1 
+    |h::t ->    let L1=h::list1
+                if (findRepeats list h) && (findRepeats list1 h list1) then uniq L1 input t
+                else uniq list1 input t
+    uniq [] list list 
+
+let rec output (list1:int list)=
+    match list1 with
+    |[] -> let z=System.Console.ReadKey()
+            0
+    |h::t -> System.Console.WriteLine ((findRepeats )
+
+
+let list2 (input:list<int>) list1 =
+    let rec findCount input elem count = function
+    |[] -> count 
+    |h::t -> if h=elem then findCount input t (count+1)
+             else findCount input t count
+
+findCount 0 el
+
+
+
+
 //let rec write_list (list:int list)=
 //    match list with 
 //    |[] ->  let z=System.Console.ReadKey()
@@ -45,9 +77,6 @@ let read_data=
 //let L1 = uniq [] input
 
 
-
-
-
     //проверить след элемент из исходного, если он равен эл-ту из L1, то пропускаем
 
 //let new_list list =
@@ -63,7 +92,6 @@ let read_data=
 //    |h::t -> if h=el then false
 //                else in_list_exclude t el t
 
-    
  
     
 //let prog list =
@@ -72,25 +100,25 @@ let read_data=
 //    | head::tail -> prog2 prov head tail 
 
 
-let list1 (input:list<int>) =
-    let rec findRepeats list elem = function
-    |[] -> true
-    |h::t -> if h = elem then false
-                else findRepeats t elem t
+//let list1 (input:list<int>) =
+//    let rec findRepeats list elem = function
+//    |[] -> true
+//    |h::t -> if h = elem then false
+//                else findRepeats t elem t
 
-let new_uniq list=   
-    let rec uniq list1 input = function
-    |[] -> list1 
-    |h::t ->    let L1=h::list1
-                if (findRepeats list h) && (findRepeats list1 h list1) then
-                uniq L1 input h t
-                else uniq list1 input t
+//let new_uniq list=   
+//    let rec uniq list1 input = function
+//    |[] -> list1 
+//    |h::t ->    let L1=h::list1
+//                if (findRepeats list h) && (findRepeats list1 h list1) then
+//                uniq L1 input h t
+//                else uniq list1 input t
 
-let rec output (list1:int list)=
-    match list1 with
-    |[] -> let z=System.Console.ReadKey()
-            0
-    |h::then -> System.Console.WriteLine ((findRepeats )
+//let rec output (list1:int list)=
+//    match list1 with
+//    |[] -> let z=System.Console.ReadKey()
+//            0
+//    |h::t -> System.Console.WriteLine ((findRepeats )
 
 ////где-то тут вывод list1
 //let rec output list1 = function
@@ -99,23 +127,18 @@ let rec output (list1:int list)=
 //        output list1 t
 
 //let (list1:list<int>) = uniq [] input
+//let list2 (input:list<int>) list1 =
+//    let rec findCount input elem count = function
+//    |[] -> count 
+//    |h::t -> if h=elem then findCount input t (count+1)
+//             else findCount input t count
+
+//    findCount 0 el
 
 
 
-let list2 (input:list<int>) list1 =
-    let rec findCount input elem count = function
-    |[] -> count 
-    |h::t -> if h=elem then findCount input t (count+1)
-             else findCount input t count
-
-    findCount 0 el
-
-
-
-
-
-[<EntryPoint>]
-let main argv = read_data|>list2|>list1
+//[<EntryPoint>]
+//let main argv = read_data|>list2|>list1
 
 
 

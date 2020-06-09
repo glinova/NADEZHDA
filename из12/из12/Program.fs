@@ -72,7 +72,6 @@ let read_data=
 //    | head::tail -> prog2 prov head tail 
 
 
-
 let list1 (input:list<int>) =
     let rec findRepeats list elem = function
     |[] -> true
@@ -86,13 +85,24 @@ let list1 (input:list<int>) =
                 if (findRepeats list h) && (findRepeats list1 h list1) then
                 uniq L1 input h t
                 else uniq list1 input t
-     
+
+//где-то тут вывод list1
 let rec output list1 = function
 |[] -> ()
 |h::t -> System.Console.Write(list1 h)
         output list1 t
 
 let (list1:list<int>) = uniq [] input
+
+
+
+let list2 (input:list<int>) list1 =
+    let rec findCount input elem count = function
+    |[] -> count 
+    |h::t -> if h=elem then findCount 
+
+
+
 
 
 
